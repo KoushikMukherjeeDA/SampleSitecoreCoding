@@ -1,0 +1,124 @@
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "System": "Information",
+      "Microsoft": "Information"
+    }
+  },
+  "Serilog": {
+    "FileSizeLimitBytes": "104857600"
+  },
+  "Migration": {
+    "Comment1": "All migration settings under this section do not support environment-specific settings.",
+    "Comment2": "All migration settings under this section will be loaded and then replaced from configuring in GUI (Graphical User Interface).",
+    "Source": {
+      "SitecoreCmBaseUri": "https://demosc.dev.local",
+      "SitecoreCmUserName": "admin",
+      "SitecoreCmPassword": "******",
+      "SitecoreCmMigrationHandlerFileRelativePath": "/_MigrationHarness/MigrationHandler.ashx"
+    },
+    "Target": {
+      "SitecoreXmCloudEnvironmentId": "*************************",
+      "SitecoreXmCloudCmBaseUri": "https://xmc-*****************-development77b3.sitecorecloud.io/sitecore",
+      "SitecoreXmCloudClientId": "*********************************",
+      "SitecoreXmCloudClientSecret": "****************************************************************",
+      "SitecoreXmCloudAuthorityUri": "https://auth.sitecorecloud.io",
+      "SitecoreXmCloudMonitoringHostUri": "https://xmcloud-monitoring-api.sitecorecloud.io",
+      "SitecoreXmCloudAudienceUri": "https://api.sitecorecloud.io"
+    },
+    "Content": {
+      "ContentItems": [
+        {
+          "name": "templates.Feature",
+          "path": "/sitecore/templates/Feature",
+          "ContentTransferScope": "ItemAndDescendants",
+          "MergeStrategy": "OverrideExistingItem"
+        },
+        {
+          "name": "templates.Foundation",
+          "path": "/sitecore/templates/Foundation",
+          "ContentTransferScope": "ItemAndDescendants",
+          "MergeStrategy": "OverrideExistingItem"
+        },
+        {
+          "name": "templates.Project",
+          "path": "/sitecore/templates/Project",
+          "ContentTransferScope": "ItemAndDescendants",
+          "MergeStrategy": "OverrideExistingItem"
+        },
+        {
+          "name": "content",
+          "path": "/sitecore/content",
+          "ContentTransferScope": "ItemAndDescendants",
+          "MergeStrategy": "OverrideExistingItem"
+        },
+        {
+          "name": "medialibrary.Netlify",
+          "path": "/sitecore/media library/Netlify",
+          "ContentTransferScope": "ItemAndDescendants",
+          "MergeStrategy": "OverrideExistingItem"
+        },
+        {
+          "name": "medialibrary.SitecoreStream",
+          "path": "/sitecore/media library/Sitecore Stream",
+          "ContentTransferScope": "ItemAndDescendants",
+          "MergeStrategy": "OverrideExistingItem"
+        }
+      ],
+      "Protobuf": {
+        "SitecoreXmCloudDataItemsTransferNuGetPackageUri": "https://artifacts.sitecore.com/public/resources/nuget/Sitecore.XmCloud.Data.ItemsTransfer/1.5.142/Sitecore.XmCloud.Data.ItemsTransfer.1.5.142.nupkg",
+        "ProtobufNetNuGetPackageUri": "https://www.nuget.org/api/v2/package/protobuf-net/2.4.6",
+        "SystemRuntimeCompilerServicesUnsafeNuGetPackageUri": "https://www.nuget.org/api/v2/package/System.Runtime.CompilerServices.Unsafe/6.0.0",
+        "SystemBuffersNuGetPackageUri": "https://www.nuget.org/api/v2/package/System.Buffers/4.4.0",
+        "SystemMemoryNuGetPackageUri": "https://www.nuget.org/api/v2/package/System.Memory/4.5.5",
+        "MicrosoftExtensionsLoggingAbstractionsNuGetPackageUri": "https://www.nuget.org/api/v2/package/Microsoft.Extensions.Logging.Abstractions/6.0.1",
+        "ItemsTransferMedium": "blob",
+        "ItemsTransferSitecoreDatabaseName": "master",
+        "Raif": {
+          "ItemsPerRaif": 10000,
+          "MediaSizeLimit": 104857600
+        },
+        "Job": {
+          "JobNamePrefix": "MigrationProtobuf",
+          "JobFullName": "MigrationProtobuf.20250903_103932_57c1f7a276304f9ca97ad355a2bdead1.29",
+          "JobLifetimeSeconds": 86400,
+          "JobStatusPollingTimeoutSeconds": 86400,
+          "JobStatusPollingIntervalSeconds": 5
+        }
+      }
+    },
+    "Users": {
+      "SitecorePortal": {
+        "ClientId": "3EiClhFiihRFrCirCJFkWmQ1FDZwO4Rg",
+        "AudienceUrl": "https://api-webapp.sitecorecloud.io",
+        "AuthorityUrl": "https://auth.sitecorecloud.io",
+        "AuthorityClaimsOrgIdUrl": "https://auth.sitecorecloud.io/claims/org_id",
+        "IdentityApiUrl": "https://identity.sitecorecloud.io",
+        "InventoryApiUrl": "https://platform-inventory.sitecorecloud.io"
+      },
+      "Handler": {
+        "AllowApproved": true,
+        "AllowLockedOut": false,
+        "Cookies": "a0Aua-QPXLB0bN4Kpt2cp1o4r4vD6DexAMmupjjfSS3Y7ryEiwUFSsLzllWh5s2B3LgyJke8YQgaRoxl63K1ITnp0MHl0GplFoHobu9FRFA52jEwkcl6kob3gFXrJ2hmOGrqiTGncE-M9HEgUnzWVqNrVkc0IpP0DpIC_64K7zfz76D7giaHM-hCTOYyqFNhy6N_YN6fZ2NTX89OvWzCfbOtNhdQi8m8HjgDJzaUL8Y2MTtY_jbM3YIC-zCsgvoxsQIOzJn7Ze3-ZWIuzmecnWuYUhpQfhuehm7KG4SoONzmtwPqJXl0Oe6g-fQUYLTwdpxzqn58OX3mJvq_mfjUVqdiDKg05qNnMseiuwvolPogz9mfR-pYSnAq4n9K_PnOf7IAszACqO0c0mkPz9hhRxIUrqwg5HHi7vwUJJpS1j3rsjIopfJDIpQlAflU6ZW2ZJcJtNCoi-9wy8zWN6g9aA"
+      },
+      "Developer": {
+        "OrganizationId": "org_4UfbWYGqTn0HcV5T",
+        "InviterName": "Migration Group",
+        "Domains": [
+          "sitecore"
+        ]
+      },
+      "EnvironmentTenantState": {
+        "Active": "Active"
+      }
+    },
+    "Session": {
+      "MigrateTypeContentAndMedia": true,
+      "MigrateTypeUsers": true,
+      "IsActive": false,
+      "CountUsersToInvite": 1,
+      "TargetSitecorePortalAccessToken": ""
+    }
+  }
+}
